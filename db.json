@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "profileId": 1,
+      "title": "Teste",
+      "date": "2023-03-20T12:28:31"
+    },
+    {
+      "id": 2,
+      "profileId": 1,
+      "title": "Teste",
+      "date": "2023-03-19T12:28:31"
+    },
+    {
+      "id": 3,
+      "profileId": 1,
+      "title": "Teste",
+      "date": "2023-03-18T12:28:31"
+    },
+    {
+      "id": 4,
+      "profileId": 1,
+      "title": "Teste",
+      "date": "2023-03-17T12:28:31"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "name": "Marcos Franco",
+      "email": "marcos.franco@gmail.com",
+      "photo": "/assets/img/profile.png",
+      "active": true
+    }
+  ]
+}

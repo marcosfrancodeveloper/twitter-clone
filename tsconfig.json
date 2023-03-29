@@ -1,0 +1,45 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": false,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2020",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@decskill-lib/ngx-domain": [
+        "dist/decskill-lib/ngx-domain/decskill-lib-ngx-domain",
+        "dist/decskill-lib/ngx-domain"
+      ],
+      "@decskill-lib/ngx-api": [
+        "dist/decskill-lib/ngx-api/decskill-lib-ngx-api",
+        "dist/decskill-lib/ngx-api"
+      ],
+      "@decskill-lib/ngx-component": [
+        "dist/decskill-lib/ngx-component/decskill-lib-ngx-component",
+        "dist/decskill-lib/ngx-component"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

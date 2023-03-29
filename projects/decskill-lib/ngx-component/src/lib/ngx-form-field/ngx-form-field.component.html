@@ -1,0 +1,30 @@
+<div class="fsg-form-field fs-position-relative">
+  <div class="form-group" [class.has-error]="controlHasValidationError">
+    <label *ngIf="labelContent" [for]="for" class="control-label">
+      {{ labelContent }}
+      <small *ngIf="required">*</small>
+      <em
+        *ngIf="tooltip || tooltipTemplate"
+        class="fas fa-info fa-sm fs-xs-margin-left"
+        [title]="tooltipTemplate ? '' : tooltip"
+      ></em>
+    </label>
+    <small *ngIf="subtitle" class="fs-xs-padding-left">{{ subtitle }}</small>
+    <ng-content></ng-content>
+    <ng-container *ngFor="let message of validatorMessages">
+      <span
+        *ngIf="control && control.hasError(message.validator) && control.touched"
+        class="help-block"
+      >
+        {{ message.message }}
+      </span>
+    </ng-container>
+    <!--[ngStyle]="{ bottom: controlHasValidationError ? '-10px' : '-27px' }"-->
+    <span
+      *ngIf="control && characterCounterLimit"
+      class="help-block fs-position-right"
+    >
+      {{ control.value.length }}/{{ characterCounterLimit }}
+    </span>
+  </div>
+</div>

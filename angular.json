@@ -1,0 +1,255 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-decskill": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ngx-decskill",
+      "sourceRoot": "projects/ngx-decskill/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "allowedCommonJsDependencies": [
+              "uuid"
+            ],
+            "outputPath": "dist/app-ngx-decskill/dist",
+            "index": "projects/ngx-decskill/src/index.html",
+            "main": "projects/ngx-decskill/src/main.ts",
+            "polyfills": "projects/ngx-decskill/src/polyfills.ts",
+            "tsConfig": "projects/ngx-decskill/tsconfig.app.json",
+            "assets": [
+              "projects/ngx-decskill/src/favicon.ico",
+              "projects/ngx-decskill/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-decskill/src/styles.scss"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-decskill/src/environments/environment.ts",
+                  "with": "projects/ngx-decskill/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-decskill:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-decskill:build:production"
+            },
+            "development": {
+              "browserTarget": "ngx-decskill:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-decskill:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "polyfills": [
+              "projects/ngx-decskill/src/polyfills.ts"
+            ],
+            "tsConfig": "projects/ngx-decskill/tsconfig.spec.json",
+            "assets": [
+              "projects/ngx-decskill/src/favicon.ico",
+              "projects/ngx-decskill/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-decskill/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-decskill/**/*.ts",
+              "projects/ngx-decskill/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "@decskill-lib/ngx-component": {
+      "projectType": "library",
+      "root": "projects/decskill-lib/ngx-component",
+      "sourceRoot": "projects/decskill-lib/ngx-component/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/decskill-lib/ngx-component/tsconfig.lib.json",
+            "project": "projects/decskill-lib/ngx-component/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/decskill-lib/ngx-component/tsconfig.lib.prod.json"
+            },
+            "development": {}
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "tsConfig": "projects/decskill-lib/ngx-component/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/decskill-lib/ngx-component/tsconfig.lib.json",
+              "projects/decskill-lib/ngx-component/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@decskill-lib/ngx-api": {
+      "projectType": "library",
+      "root": "projects/decskill-lib/ngx-api",
+      "sourceRoot": "projects/decskill-lib/ngx-api/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/decskill-lib/ngx-api/tsconfig.lib.json",
+            "project": "projects/decskill-lib/ngx-api/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/decskill-lib/ngx-api/tsconfig.lib.prod.json"
+            },
+            "development": {}
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "tsConfig": "projects/decskill-lib/ngx-api/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/decskill-lib/ngx-api/**/*.ts",
+              "projects/decskill-lib/ngx-api/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "@decskill-lib/ngx-domain": {
+      "projectType": "library",
+      "root": "projects/decskill-lib/ngx-domain",
+      "sourceRoot": "projects/decskill-lib/ngx-domain/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/decskill-lib/ngx-domain/tsconfig.lib.json",
+            "project": "projects/decskill-lib/ngx-domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/decskill-lib/ngx-domain/tsconfig.lib.prod.json"
+            },
+            "development": {}
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "tsConfig": "projects/decskill-lib/ngx-domain/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/decskill-lib/ngx-domain/**/*.ts",
+              "projects/decskill-lib/ngx-domain/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "013a6c68-c0fb-4937-841d-a94be50ea630",
+    "cache": {
+      "enabled": false
+    }
+  }
+}

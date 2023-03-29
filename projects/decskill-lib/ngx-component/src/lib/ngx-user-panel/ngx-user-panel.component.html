@@ -1,0 +1,45 @@
+<div #userpanel class="fixed-plugin ">
+  <div class="card shadow-lg ">
+    <div class="card-header pb-3 pt-3 ">
+      <div class="float-start">
+        <h5 class="mt-3 mb-0">Painel do Usuário</h5>
+      </div>
+      <div class="float-end mt-4">
+        <button class="btn btn-link text-dark p-0 fixed-plugin-close-button" (click)="onClose()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="float-start mt-3">
+        <img [src]="profile?.photo" alt="perfil" class="w-35 border-radius-lg shadow-sm">
+        <div class="float-end d-flex flex-column mt-2">
+          <span class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ profile?.name }}</span>
+          <div class="text-muted" style="font-size: small;">
+            <i class="fa fa-envelope"></i>&nbsp;{{ profile?.email }}
+          </div>
+          <div class="navi mt-2">
+            <button type="button" class="btn btn-sm bg-gradient-danger font-weight-bolder py-2 px-5" (click)="logoff()">Sair</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="loading; else loadingItens">
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0" [perfectScrollbar]>
+        <div class="mt-3">
+          <h6 class="mb-0">Notificações</h6>
+        </div>
+        <div class="mt-3">
+          <p class="text-center text-sm">Não há notificações</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingItens>
+  <ngx-skeleton-loader
+    [hidden]="loading"
+    count="4"
+    [theme]="{ 'border-radius': '40', height: '40px', padding: '20px !important' }"
+  ></ngx-skeleton-loader>
+</ng-template>
