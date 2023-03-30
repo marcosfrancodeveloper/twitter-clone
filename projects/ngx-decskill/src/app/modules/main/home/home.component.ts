@@ -11,11 +11,11 @@ import { PostQueryParams } from '@decskill-lib/ngx-api';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class HomeComponent implements OnInit {
   profile$: Observable<IProfile | null> = this._store.select(getProfile);
   posts$: Observable<IPost[]> = this._store.select(getPosts);
   page = 1;
@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._breadcrumbService.add('dashboard-breadcrumb', 'Home', '/home', 1);
+    this._breadcrumbService.add('home-breadcrumb', 'Home', '/home', 1);
     this.loadPosts();
   }
 

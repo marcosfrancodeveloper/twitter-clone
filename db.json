@@ -1,12 +1,5 @@
 {
-  "posts": [
-    {
-      "title": "Hello World :)",
-      "date": "2023-03-28T14:23:00",
-      "profileId": 1,
-      "id": 1
-    }
-  ],
+  "posts": [],
   "profiles": [
     {
       "id": 1,

@@ -8,8 +8,7 @@ import { Location } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Ngx404PageComponent {
-
-  message = 'The webmaster said that you can not enter this page...';
+  message = 'Você não pode entrar nesta página...';
 
   /**
    * CONSTRUCTOR
@@ -22,5 +21,4 @@ export class Ngx404PageComponent {
   navigate(): void {
     this._location.back();
   }
-
 }
