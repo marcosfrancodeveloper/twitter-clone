@@ -11,7 +11,7 @@
           </strong>
           <span class="tag">{{ post!.profile?.tag }}</span>
           <span class="dot">·</span>
-          <span class="time">{{ post.date | date: 'short' }}</span>
+          <span class="time">{{ publishedTime }}</span>
         </div>
         <a href="javascript:;" [id]="'action' + post.id" class="details" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-ellipsis-h"></i>

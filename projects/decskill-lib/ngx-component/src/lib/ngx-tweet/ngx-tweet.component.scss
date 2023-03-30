@@ -6,38 +6,16 @@
   height: 48px;
 }
 
-.right-column {
-  input {
-    position: relative;
-    left: 11px;
-    top: 3px;
-    height: 44px;
-    background-color: transparent;
-    border: none;
-
-    &::placeholder {
-      font-size: 18px;
-      color: $gray-600;
-    }
-  }
-}
-
-@media screen and (max-width: 522px) {
-  .tweet {
-    flex-wrap: wrap;
-  }
-}
-
 .tweet {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid $blue-800;
-  padding: 15px;
+  // padding: 15px;
 
   &-btn {
     font-size: 16px;
     width: 90px;
-    height: 46px;
+    height: 40px;
     font-weight: 700;
     border: none;
     background-color: $primary;
@@ -53,6 +31,26 @@
 
   .right-column {
     width: 100%;
+
+    input {
+      width: 99%;
+      position: relative;
+      left: 11px;
+      top: 3px;
+      right: 3px;
+      height: 44px;
+      background-color: transparent;
+      border: none;
+
+      &::placeholder {
+        font-size: 18px;
+        color: $gray-600;
+      }
+
+      &:focus {
+        outline: 1px solid rgba($primary, .2);
+      }
+    }
 
     .bottom-row {
       width: 100%;
@@ -84,5 +82,11 @@
         fill: $primary;
       }
     }
+  }
+}
+
+@media screen and (max-width: 522px) {
+  .right-column {
+    width: 80% !important;
   }
 }

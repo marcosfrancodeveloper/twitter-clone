@@ -43,6 +43,7 @@ yarn-error.log
 testem.log
 /typings
 /dist
+*.icloud
 
 # System Files
 .DS_Store
