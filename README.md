@@ -1,11 +1,10 @@
 # DecSkill
 
-> Angular 14+, Bootstrap
+> Angular 14+, Bootstrap, NgRx, JsonServer
 
 ## Índice
 * [Intuíto](#intuito)
 * [Execução](#execucao)
-* [Estrutura](#estrutura)
 
 ### Intuíto:
 Desenvolver um projeto frontend de acordo com o arquivo `./Decskill Timeline Challenge - FE.pdf` para empresa **decskill**.
@@ -22,10 +21,3 @@ $ npm run start
 ```
 
 Por fim, basta [`acessar a URL`](http://localhost:4200/)
-
-### Estrutura
-Você encontrará os seguintes diretórios e arquivos:
-
-```
-
-```
