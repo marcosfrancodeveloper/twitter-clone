@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgxUserPanelComponent } from './ngx-user-panel.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 
 @NgModule({
   declarations: [NgxUserPanelComponent],
@@ -11,8 +10,7 @@ import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
   imports: [
     CommonModule,
     RouterModule,
-    NgxSkeletonLoaderModule,
-    PerfectScrollbarModule
+    NgxSkeletonLoaderModule
   ]
 })
 export class NgxUserPanelModule { }

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { IProfile } from '@decskill-lib/ngx-domain';
+import { IProfile, Post } from '@decskill-lib/ngx-domain';
 
 @Component({
   selector: 'lib-ngx-tweet',
@@ -9,11 +9,14 @@ import { IProfile } from '@decskill-lib/ngx-domain';
 })
 export class NgxTweetComponent {
   maxlength: number = 130;
-  @Input('profile') profile!: IProfile;
-  // @Output()
+  @Input() profile!: IProfile;
+  @Output() tweet = new EventEmitter<Post>();
 
   form: FormGroup = this._formBuilder.group({
-    title: new FormControl('', [Validators.required, Validators.maxLength(this.maxlength)]),
+    title: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(this.maxlength)
+    ]),
   });
 
   /**
@@ -26,7 +29,8 @@ export class NgxTweetComponent {
 
   submit() {
     if (this.form.valid) {
-      console.log(this.form.value);
+      this.tweet.emit(this.form.value);
+      this.form.get('title')?.setValue('');
     }
   }
 }

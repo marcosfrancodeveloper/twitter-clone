@@ -15,7 +15,6 @@
 	// Verify navbar blur on scroll
 	navbarBlurOnScroll('navbarBlur');
 
-
 	// initialization of Tooltips
 	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -266,8 +265,8 @@
 		}
 
 		function transparentNavbar() {
-			navbar.classList.remove(...classes)
-			navbar.classList.add(...toggleClasses)
+			// navbar.classList.remove(...classes)
+			// navbar.classList.add(...toggleClasses)
 
 			toggleNavLinksColor('transparent');
 		}

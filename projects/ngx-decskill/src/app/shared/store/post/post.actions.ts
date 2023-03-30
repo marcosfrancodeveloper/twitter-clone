@@ -8,6 +8,11 @@ export const enum PostTypeActions {
   LOAD_SUCCESS = '[LOAD_SUCCESS] Carregamento de listagem de postagens com sucesso',
   LOAD_FAIL = '[LOAD_FAIL] Carregamento de listagem de postagens com falha',
 
+  // All Paginable
+  LOAD_PAGINABLE = '[LOAD_PAGINABLE] Carregamento de listagem de postagens',
+  LOAD_PAGINABLE_SUCCESS = '[LOAD_PAGINABLE_SUCCESS] Carregamento de listagem de postagens com sucesso',
+  LOAD_PAGINABLE_FAIL = '[LOAD_PAGINABLE_FAIL] Carregamento de listagem de postagens com falha',
+
   // GetById
   BY = '[BY] Carregamento de postagem',
   BY_SUCCESS = '[BY_SUCCESS] Carregamento de postagem com sucesso',
@@ -33,6 +38,11 @@ export const enum PostTypeActions {
 export const LoadPosts = createAction(PostTypeActions.LOAD, props<{ path?: PathParams, params?: PostQueryParams, customUrl?: string }>());
 export const LoadPostsSuccess = createAction(PostTypeActions.LOAD_SUCCESS, props<{ payload: IPost[] }>());
 export const LoadPostsFail = createAction(PostTypeActions.LOAD_FAIL, props<{ error: Error }>());
+
+// All Paginable
+export const LoadPaginablePosts = createAction(PostTypeActions.LOAD_PAGINABLE, props<{ path?: PathParams, params?: PostQueryParams, customUrl?: string }>());
+export const LoadPaginablePostsSuccess = createAction(PostTypeActions.LOAD_PAGINABLE_SUCCESS, props<{ payload: IPost[] }>());
+export const LoadPaginablePostsFail = createAction(PostTypeActions.LOAD_PAGINABLE_FAIL, props<{ error: Error }>());
 
 // GetById
 export const ByPost = createAction(PostTypeActions.BY, props<{ path?: PathParams, params?: PostQueryParams, customUrl?: string }>());

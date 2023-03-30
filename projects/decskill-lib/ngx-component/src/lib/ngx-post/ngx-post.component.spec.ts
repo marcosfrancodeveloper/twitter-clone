@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxPostComponent } from './ngx-post.component';
 
-import { NgxAlertComponent } from './ngx-alert.component';
-
-describe('NgxAlertComponent', () => {
-  let component: NgxAlertComponent;
-  let fixture: ComponentFixture<NgxAlertComponent>;
+describe('NgxPostComponent', () => {
+  let component: NgxPostComponent;
+  let fixture: ComponentFixture<NgxPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxAlertComponent ]
+      declarations: [ NgxPostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxAlertComponent);
+    fixture = TestBed.createComponent(NgxPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

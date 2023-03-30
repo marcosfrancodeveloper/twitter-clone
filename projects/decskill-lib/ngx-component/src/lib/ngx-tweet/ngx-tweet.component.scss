@@ -22,8 +22,15 @@
   }
 }
 
+@media screen and (max-width: 522px) {
+  .tweet {
+    flex-wrap: wrap;
+  }
+}
+
 .tweet {
   display: flex;
+  flex-direction: row;
   border-bottom: 1px solid $blue-800;
   padding: 15px;
 
@@ -45,6 +52,8 @@
   }
 
   .right-column {
+    width: 100%;
+
     .bottom-row {
       width: 100%;
       display: flex;
@@ -64,7 +73,7 @@
           justify-content: center;
 
           &:hover {
-            background: $blue-900;
+            background-color: rgba($primary, 0.1);
           }
         }
       }

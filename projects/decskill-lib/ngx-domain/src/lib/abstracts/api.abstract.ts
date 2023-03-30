@@ -181,7 +181,6 @@ export abstract class AbstractAPI<U> {
         .join('&')
     );
 
-    console.log(queryParams, queryParamsOptions);
     return `?${queryParams.join('&')}`;
   }
 }

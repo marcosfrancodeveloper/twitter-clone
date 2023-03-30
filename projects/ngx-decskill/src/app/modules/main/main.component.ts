@@ -65,8 +65,8 @@ export class MainComponent implements OnInit {
 
   private iconToRoute(route?: string): string {
     switch(route) {
-      case 'dashboard':
-        return 'analytics';
+      case 'home':
+        return 'home';
       default:
         return '';
     }

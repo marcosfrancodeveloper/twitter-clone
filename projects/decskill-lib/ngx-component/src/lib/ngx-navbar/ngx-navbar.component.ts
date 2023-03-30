@@ -8,7 +8,7 @@ import { NgxUserPanelService } from '../ngx-user-panel/ngx-user-panel.service';
   styleUrls: ['./ngx-navbar.component.scss']
 })
 export class NgxNavbarComponent {
-  @Input('profile') profile!: IProfile;
+  @Input() profile!: IProfile;
 
   /**
    * CONSTRUCTOR

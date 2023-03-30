@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
-      <div class="p-3">
-        <lib-ngx-tweet [profile]="profile"></lib-ngx-tweet>
+      <div class="p-3" *ngIf="(profile$ | async) as profile">
+        <lib-ngx-tweet [profile]="profile" (tweet)="tweet($event)"></lib-ngx-tweet>
       </div>
     </div>
   </div>
@@ -11,8 +11,20 @@
 <div class="row mt-4">
   <div class="col-lg-12 mb-lg-0 mb-4">
     <div class="card">
-      <div class="h-20 p-3">
-
+      <div
+        class="feed h-10 p-3"
+        *ngIf="(posts$ | async) as posts"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="50"
+        [scrollWindow]="false"
+        (scrolled)="onScroll()"
+      >
+        <lib-ngx-post
+          *ngFor="let post of posts"
+          [post]="post"
+          (removeTweet)="removeTweet($event)"
+        ></lib-ngx-post>
       </div>
     </div>
   </div>

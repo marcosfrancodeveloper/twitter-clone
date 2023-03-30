@@ -24,11 +24,26 @@ export class PostEffect {
     () => this._actions$.pipe(
       ofType(fromPostAction.PostTypeActions.LOAD),
       exhaustMap((param: any) =>
-        this._postApi.getAll(param.path, param.params)
+        this._postApi.getAll(param?.path, param?.params)
           .pipe(
             map((payload: IPost[]) =>
               fromPostAction.LoadPostsSuccess({ payload }),
               catchError(error => of(fromPostAction.LoadPostsFail({ error })))
+            )
+          )
+      )
+    )
+  );
+
+  loadPaginablePosts$ = createEffect(
+    () => this._actions$.pipe(
+      ofType(fromPostAction.PostTypeActions.LOAD_PAGINABLE),
+      exhaustMap((param: any) =>
+        this._postApi.getAll(param?.path, param?.params)
+          .pipe(
+            map((payload: IPost[]) =>
+              fromPostAction.LoadPaginablePostsSuccess({ payload }),
+              catchError(error => of(fromPostAction.LoadPaginablePostsFail({ error })))
             )
           )
       )
@@ -65,7 +80,7 @@ export class PostEffect {
     )
   );
 
-  updatePost$ = createEffect(
+  /*updatePost$ = createEffect(
     () => this._actions$.pipe(
       ofType(fromPostAction.PostTypeActions.UPDATE),
       exhaustMap((param: any) =>
@@ -78,7 +93,7 @@ export class PostEffect {
           )
       )
     )
-  );
+  );*/
 
   deletePost$ = createEffect(
     () => this._actions$.pipe(

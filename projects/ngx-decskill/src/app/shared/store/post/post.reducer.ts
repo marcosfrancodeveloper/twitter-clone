@@ -26,6 +26,16 @@ const _postsReducer = createReducer(
     error: error
   })),
 
+  on(fromPostActions.LoadPaginablePostsSuccess, (state, { payload }) => ({
+    ...state,
+    posts: [...state.posts, ...payload],
+    error: null
+  })),
+  on(fromPostActions.LoadPaginablePostsFail, (state, { error }) => ({
+    ...state,
+    error: error
+  })),
+
   on(fromPostActions.ByPostSuccess, (state, { payload }) => ({
     ...state,
     post: payload,

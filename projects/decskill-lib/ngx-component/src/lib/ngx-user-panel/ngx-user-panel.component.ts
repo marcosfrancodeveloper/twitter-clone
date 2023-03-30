@@ -16,7 +16,7 @@ export class NgxUserPanelComponent implements OnInit, OnDestroy {
   public loading = false;
   public isOpen = false;
   private destroy$!: Subscription;
-  @Input('profile') profile!: IProfile;
+  @Input() profile!: IProfile;
   @ViewChild('userpanel', {static: false}) userpanel!: ElementRef;
 
   private painel$: Observable<IUserPanel> = this._service.painel$;

@@ -1,0 +1,123 @@
+@import "styles/decskill/shared-variables";
+
+.profile-image {
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+	svg {
+		fill: $black;
+		height: 1.75rem;
+	}
+	.tag {
+		margin-left: 4px;
+	}
+	.time {
+		margin-left: 4px;
+	}
+
+  .details {
+    display: flex;
+    > i {
+      width: 38px;
+      height: 38px;
+      border-radius: 100%;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba($primary, .1);
+        color: $primary;
+      }
+    }
+  }
+}
+
+.post {
+  display: flex;
+  flex-direction: row;
+	border-bottom: 1px solid $blue-800;
+	padding: 15px;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $gray-100;
+	}
+
+  .right-column {
+    width: 100%;
+    position: relative;
+    left: 11px;
+
+    .dot {
+      font-size: large;
+      padding-left: .4em;
+      padding-right: .2em;
+    }
+
+    .bottom-row {
+      max-width: 425px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+
+      span {
+        font-size: 13px;
+        fill: rgb(136, 153, 166);
+        color: inherit;
+        line-height: 20px;
+      }
+
+      svg {
+        fill: rgb(136, 153, 166);
+        color: inherit;
+        margin: 8px;
+        width: 1.25em;
+        height: 1.25em;
+      }
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $gray-500;
+        margin-top: -8px;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+
+        > div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100%;
+        }
+
+        &:nth-child(2) {
+          &:hover {
+            > div { background-color: $green-100; }
+            > span { color: $success; }
+          }
+        }
+        &:nth-child(3) {
+          &:hover {
+            > div { background-color: $red-100; }
+            > span { color: $danger; }
+          }
+        }
+        &:hover {
+          > div { background-color: rgba($primary, .1); }
+          > span { color: $primary; }
+        }
+      }
+    }
+  }
+}

@@ -12,7 +12,6 @@ export class NgxFormFieldComponent implements AfterContentInit {
   @Input() for!: string;
   @Input() required = false;
   @Input() tooltip!: string;
-  @Input() subtitle!: string;
   @Input() tooltipTemplate!: TemplateRef<any>;
   @Input() validatorMessages!: NgxFormFieldValidatorMessage[];
   @Input() characterCounterLimit: number = 0;

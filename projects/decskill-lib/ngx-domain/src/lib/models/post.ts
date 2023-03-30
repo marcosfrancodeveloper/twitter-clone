@@ -32,6 +32,7 @@ export const publicPostMock: IPost = {
   profile: {
     id: 1,
     name: 'Miguel Fernando Jorge Aragão',
+    tag: '@miguelfernandojorgearagao',
     email: 'mmiguelfernandojorgearagao@gmail.com',
     photo: '/assets/img/post.png',
     active: true

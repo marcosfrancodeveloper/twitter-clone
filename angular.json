@@ -20,9 +20,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-              "uuid"
-            ],
             "outputPath": "dist/app-ngx-decskill/dist",
             "index": "projects/ngx-decskill/src/index.html",
             "main": "projects/ngx-decskill/src/main.ts",
@@ -35,7 +32,9 @@
             "styles": [
               "projects/ngx-decskill/src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,

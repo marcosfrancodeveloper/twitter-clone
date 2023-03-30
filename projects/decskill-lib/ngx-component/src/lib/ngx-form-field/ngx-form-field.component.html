@@ -1,15 +1,14 @@
-<div class="fsg-form-field fs-position-relative">
+<div class="ngx-form-field">
   <div class="form-group" [class.has-error]="controlHasValidationError">
     <label *ngIf="labelContent" [for]="for" class="control-label">
       {{ labelContent }}
       <small *ngIf="required">*</small>
       <em
         *ngIf="tooltip || tooltipTemplate"
-        class="fas fa-info fa-sm fs-xs-margin-left"
+        class="fas fa-info fa-sm"
         [title]="tooltipTemplate ? '' : tooltip"
       ></em>
     </label>
-    <small *ngIf="subtitle" class="fs-xs-padding-left">{{ subtitle }}</small>
     <ng-content></ng-content>
     <ng-container *ngFor="let message of validatorMessages">
       <span
@@ -19,11 +18,11 @@
         {{ message.message }}
       </span>
     </ng-container>
-    <!--[ngStyle]="{ bottom: controlHasValidationError ? '-10px' : '-27px' }"-->
     <span
-      *ngIf="control && characterCounterLimit"
-      class="help-block fs-position-right"
+    *ngIf="control && characterCounterLimit"
+    class="help-block fs-position-right text-sm"
     >
+      <!--[ngStyle]="{ bottom: controlHasValidationError ? '-10px' : '-27px' }"-->
       {{ control.value.length }}/{{ characterCounterLimit }}
     </span>
   </div>

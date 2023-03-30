@@ -27,21 +27,20 @@ export abstract class AbstractQueryParams<T, U, Z> implements IQueryParams {
    * @param pageSize Quantidade de registros a serem retornados.
    */
   setPagination(page: number, pageSize: number): void {
-    this.add('page', page.toString(), true);
-    this.add('pageSize', pageSize.toString(), true);
+    this.add('_page', page.toString(), true);
+    this.add('_limit', pageSize.toString(), true);
   }
 
   /**
    * Adiciona a ordenação a lista de parâmetros.
    * @param property Propriedade que será adicionada para a ordenação.
-   * @param reverse Informa de a ordenação deve ser feita de forma inversa (descendente).
+   * @param asc Informa se a ordenação deve ser feita de forma ascendente ou descendente.
    */
-  addOrder(property: Z, reverse = false): void {
+  addOrder(property: Z, asc = false): void {
     let propertyString = property as unknown as string;
-    if (reverse) {
-      propertyString = `-${propertyString}`;
-    }
-    this.add('_order', propertyString);
+    let propertyOrder = asc ? 'asc' : 'desc';
+    this.add('_sort', propertyString);
+    this.add('_order', propertyOrder);
   }
 
   /**

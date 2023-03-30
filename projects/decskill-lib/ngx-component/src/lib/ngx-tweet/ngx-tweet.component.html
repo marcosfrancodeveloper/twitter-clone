@@ -2,8 +2,8 @@
   <div class="left-column">
     <img class="profile-image" alt="perfil" [src]="profile?.photo" />
   </div>
-  <form [formGroup]="form" (ngSubmit)="submit()" class="top-row">
-    <div class="right-column">
+  <div class="right-column">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="top-row">
       <ngx-form-field
         class="form-field-title"
         for="title"
@@ -99,6 +99,6 @@
           Tweet
         </button>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>

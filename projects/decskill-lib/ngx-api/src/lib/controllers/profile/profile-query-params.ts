@@ -4,6 +4,7 @@ export type ProfileExpandable = null;
 export type ProfileParams =
     'id'
     | 'name'
+    | 'tag'
     | 'email'
     | 'active';
 export type ProfileOrderParams = 'id' | 'name';
