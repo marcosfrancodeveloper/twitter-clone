@@ -10,7 +10,7 @@
     "start": "concurrently \"npm run start:app\" \"npm run start:api\"",
     "start:api": "json-server --delay 500 --watch db.json",
     "start:app": "ng serve ngx-decskill --disable-host-check --host 0.0.0.0",
-    "build": "ng build",
+    "build:app": "ng build ngx-decskill",
     "build:initial": "npm i && npm run build:libs",
     "build:libs": "npm run build:lib-ngx-domain && npm run build:lib-ngx-api && npm run build:lib-ngx-component",
     "build:lib-ngx-domain": "ng build @decskill-lib/ngx-domain",
@@ -61,7 +61,7 @@
     "rxjs": "~6.6.0",
     "smooth-scrollbar": "^8.7.0",
     "sweetalert2": "^11.0.19",
-    "tslib": "^2.0.0",
+    "tslib": "^2.5.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -87,12 +87,12 @@
     "lint-staged": "^11.1.2",
     "ng-packagr": "^14.2.2",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
+    "tslint": "^3.9.0",
     "typescript": "~4.6.4"
   },
   "lint-staged": {
     ".css": "stylelint --fix",
     ".scss": "stylelint --sintax=scss --fix",
-    ".ts": "tslint --fix"
+    ".ts": "eslint --fix"
   }
 }
