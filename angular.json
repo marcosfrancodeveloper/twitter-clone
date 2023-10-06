@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-decskill": {
+    "ngx-twitter": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -13,8 +13,8 @@
           "strict": true
         }
       },
-      "root": "projects/ngx-decskill",
-      "sourceRoot": "projects/ngx-decskill/src",
+      "root": "projects/ngx-twitter",
+      "sourceRoot": "projects/ngx-twitter/src",
       "prefix": "app",
       "architect": {
         "build": {
@@ -23,17 +23,17 @@
             "allowedCommonJsDependencies": [
               "sweetalert2"
             ],
-            "outputPath": "dist/app-ngx-decskill/dist",
-            "index": "projects/ngx-decskill/src/index.html",
-            "main": "projects/ngx-decskill/src/main.ts",
-            "polyfills": "projects/ngx-decskill/src/polyfills.ts",
-            "tsConfig": "projects/ngx-decskill/tsconfig.app.json",
+            "outputPath": "dist/app-ngx-twitter/dist",
+            "index": "projects/ngx-twitter/src/index.html",
+            "main": "projects/ngx-twitter/src/main.ts",
+            "polyfills": "projects/ngx-twitter/src/polyfills.ts",
+            "tsConfig": "projects/ngx-twitter/tsconfig.app.json",
             "assets": [
-              "projects/ngx-decskill/src/favicon.ico",
-              "projects/ngx-decskill/src/assets"
+              "projects/ngx-twitter/src/favicon.ico",
+              "projects/ngx-twitter/src/assets"
             ],
             "styles": [
-              "projects/ngx-decskill/src/styles.scss"
+              "projects/ngx-twitter/src/styles.scss"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -49,8 +49,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/ngx-decskill/src/environments/environment.ts",
-                  "with": "projects/ngx-decskill/src/environments/environment.prod.ts"
+                  "replace": "projects/ngx-twitter/src/environments/environment.ts",
+                  "with": "projects/ngx-twitter/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -87,14 +87,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-decskill:build"
+            "browserTarget": "ngx-twitter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-decskill:build:production"
+              "browserTarget": "ngx-twitter:build:production"
             },
             "development": {
-              "browserTarget": "ngx-decskill:build:development"
+              "browserTarget": "ngx-twitter:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,22 +102,22 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-decskill:build"
+            "browserTarget": "ngx-twitter:build"
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
             "polyfills": [
-              "projects/ngx-decskill/src/polyfills.ts"
+              "projects/ngx-twitter/src/polyfills.ts"
             ],
-            "tsConfig": "projects/ngx-decskill/tsconfig.spec.json",
+            "tsConfig": "projects/ngx-twitter/tsconfig.spec.json",
             "assets": [
-              "projects/ngx-decskill/src/favicon.ico",
-              "projects/ngx-decskill/src/assets"
+              "projects/ngx-twitter/src/favicon.ico",
+              "projects/ngx-twitter/src/assets"
             ],
             "styles": [
-              "projects/ngx-decskill/src/styles.scss"
+              "projects/ngx-twitter/src/styles.scss"
             ],
             "scripts": []
           }
@@ -126,28 +126,28 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/ngx-decskill/**/*.ts",
-              "projects/ngx-decskill/**/*.html"
+              "projects/ngx-twitter/**/*.ts",
+              "projects/ngx-twitter/**/*.html"
             ]
           }
         }
       }
     },
-    "@decskill-lib/ngx-component": {
+    "@twitter-lib/ngx-component": {
       "projectType": "library",
-      "root": "projects/decskill-lib/ngx-component",
-      "sourceRoot": "projects/decskill-lib/ngx-component/src",
+      "root": "projects/twitter-lib/ngx-component",
+      "sourceRoot": "projects/twitter-lib/ngx-component/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/decskill-lib/ngx-component/tsconfig.lib.json",
-            "project": "projects/decskill-lib/ngx-component/ng-package.json"
+            "tsConfig": "projects/twitter-lib/ngx-component/tsconfig.lib.json",
+            "project": "projects/twitter-lib/ngx-component/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/decskill-lib/ngx-component/tsconfig.lib.prod.json"
+              "tsConfig": "projects/twitter-lib/ngx-component/tsconfig.lib.prod.json"
             },
             "development": {}
           },
@@ -156,15 +156,15 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "projects/decskill-lib/ngx-component/tsconfig.spec.json"
+            "tsConfig": "projects/twitter-lib/ngx-component/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/decskill-lib/ngx-component/tsconfig.lib.json",
-              "projects/decskill-lib/ngx-component/tsconfig.spec.json"
+              "projects/twitter-lib/ngx-component/tsconfig.lib.json",
+              "projects/twitter-lib/ngx-component/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -173,21 +173,21 @@
         }
       }
     },
-    "@decskill-lib/ngx-api": {
+    "@twitter-lib/ngx-api": {
       "projectType": "library",
-      "root": "projects/decskill-lib/ngx-api",
-      "sourceRoot": "projects/decskill-lib/ngx-api/src",
+      "root": "projects/twitter-lib/ngx-api",
+      "sourceRoot": "projects/twitter-lib/ngx-api/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/decskill-lib/ngx-api/tsconfig.lib.json",
-            "project": "projects/decskill-lib/ngx-api/ng-package.json"
+            "tsConfig": "projects/twitter-lib/ngx-api/tsconfig.lib.json",
+            "project": "projects/twitter-lib/ngx-api/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/decskill-lib/ngx-api/tsconfig.lib.prod.json"
+              "tsConfig": "projects/twitter-lib/ngx-api/tsconfig.lib.prod.json"
             },
             "development": {}
           },
@@ -196,35 +196,35 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "projects/decskill-lib/ngx-api/tsconfig.spec.json"
+            "tsConfig": "projects/twitter-lib/ngx-api/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/decskill-lib/ngx-api/**/*.ts",
-              "projects/decskill-lib/ngx-api/**/*.html"
+              "projects/twitter-lib/ngx-api/**/*.ts",
+              "projects/twitter-lib/ngx-api/**/*.html"
             ]
           }
         }
       }
     },
-    "@decskill-lib/ngx-domain": {
+    "@twitter-lib/ngx-domain": {
       "projectType": "library",
-      "root": "projects/decskill-lib/ngx-domain",
-      "sourceRoot": "projects/decskill-lib/ngx-domain/src",
+      "root": "projects/twitter-lib/ngx-domain",
+      "sourceRoot": "projects/twitter-lib/ngx-domain/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/decskill-lib/ngx-domain/tsconfig.lib.json",
-            "project": "projects/decskill-lib/ngx-domain/ng-package.json"
+            "tsConfig": "projects/twitter-lib/ngx-domain/tsconfig.lib.json",
+            "project": "projects/twitter-lib/ngx-domain/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/decskill-lib/ngx-domain/tsconfig.lib.prod.json"
+              "tsConfig": "projects/twitter-lib/ngx-domain/tsconfig.lib.prod.json"
             },
             "development": {}
           },
@@ -233,15 +233,15 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "projects/decskill-lib/ngx-domain/tsconfig.spec.json"
+            "tsConfig": "projects/twitter-lib/ngx-domain/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/decskill-lib/ngx-domain/**/*.ts",
-              "projects/decskill-lib/ngx-domain/**/*.html"
+              "projects/twitter-lib/ngx-domain/**/*.ts",
+              "projects/twitter-lib/ngx-domain/**/*.html"
             ]
           }
         }

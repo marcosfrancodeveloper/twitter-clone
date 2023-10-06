@@ -23,17 +23,17 @@
       "dom"
     ],
     "paths": {
-      "@decskill-lib/ngx-domain": [
-        "dist/decskill-lib/ngx-domain/decskill-lib-ngx-domain",
-        "dist/decskill-lib/ngx-domain"
+      "@twitter-lib/ngx-domain": [
+        "dist/twitter-lib/ngx-domain/twitter-lib-ngx-domain",
+        "dist/twitter-lib/ngx-domain"
       ],
-      "@decskill-lib/ngx-api": [
-        "dist/decskill-lib/ngx-api/decskill-lib-ngx-api",
-        "dist/decskill-lib/ngx-api"
+      "@twitter-lib/ngx-api": [
+        "dist/twitter-lib/ngx-api/twitter-lib-ngx-api",
+        "dist/twitter-lib/ngx-api"
       ],
-      "@decskill-lib/ngx-component": [
-        "dist/decskill-lib/ngx-component/decskill-lib-ngx-component",
-        "dist/decskill-lib/ngx-component"
+      "@twitter-lib/ngx-component": [
+        "dist/twitter-lib/ngx-component/twitter-lib-ngx-component",
+        "dist/twitter-lib/ngx-component"
       ]
     }
   },

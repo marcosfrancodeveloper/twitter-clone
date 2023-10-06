@@ -1,0 +1,92 @@
+@import "styles/twitter/shared-variables";
+
+.profile-image {
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+}
+
+.tweet {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid $blue-800;
+  // padding: 15px;
+
+  &-btn {
+    font-size: 16px;
+    width: 90px;
+    height: 40px;
+    font-weight: 700;
+    border: none;
+    background-color: $primary;
+    color: $white;
+    border-radius: 30px;
+    margin: 0;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  .right-column {
+    width: 100%;
+
+    input {
+      width: 99%;
+      position: relative;
+      left: 11px;
+      top: 3px;
+      right: 3px;
+      height: 44px;
+      background-color: transparent;
+      border: none;
+
+      &::placeholder {
+        font-size: 18px;
+        color: $gray-600;
+      }
+
+      &:focus {
+        outline: 1px solid rgba($primary, .2);
+      }
+    }
+
+    .bottom-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+
+      .buttons {
+        display: flex;
+        > div {
+          width: 38px;
+          height: 38px;
+          border-radius: 100%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background-color: rgba($primary, 0.1);
+          }
+        }
+      }
+
+      svg {
+        width: 22px;
+        height: 22px;
+        fill: $primary;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 522px) {
+  .right-column {
+    width: 80% !important;
+  }
+}

@@ -1,26 +1,27 @@
 {
-  "name": "decskill-test-frontend",
+  "name": "twitter-clone",
   "version": "1.0.0",
   "author": {
     "name": "Marcos Franco",
     "email": "marcosfranco.developer@gmail.com"
   },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"npm run start:app\" \"npm run start:api\"",
     "start:api": "json-server --delay 500 --watch db.json",
-    "start:app": "ng serve ngx-decskill --disable-host-check --host 0.0.0.0",
-    "build:app": "ng build ngx-decskill",
+    "start:app": "ng serve ngx-twitter --disable-host-check --host 0.0.0.0",
+    "build:app": "ng build ngx-twitter",
     "build:initial": "npm i && npm run build:libs",
     "build:libs": "npm run build:lib-ngx-domain && npm run build:lib-ngx-api && npm run build:lib-ngx-component",
-    "build:lib-ngx-domain": "ng build @decskill-lib/ngx-domain",
-    "build:lib-ngx-api": "ng build @decskill-lib/ngx-api",
-    "build:lib-ngx-component": "ng build @decskill-lib/ngx-component",
-    "test:coverage": "npm run test:coverage:libs && npm run test:coverage:ngx-decskill",
+    "build:lib-ngx-domain": "ng build @twitter-lib/ngx-domain",
+    "build:lib-ngx-api": "ng build @twitter-lib/ngx-api",
+    "build:lib-ngx-component": "ng build @twitter-lib/ngx-component",
+    "test:coverage": "npm run test:coverage:libs && npm run test:coverage:ngx-twitter",
     "test:coverage:libs": "npm run test:coverage:lib-ngx-api && npm run test:coverage:lib-ngx-component",
-    "test:coverage:lib-ngx-api": "ng test @decskill-lib/ngx-api",
-    "test:coverage:lib-ngx-component": "ng test @decskill-lib/ngx-component",
-    "test:coverage:ngx-decskill": "ng test ngx-decskill --coverage",
+    "test:coverage:lib-ngx-api": "ng test @twitter-lib/ngx-api",
+    "test:coverage:lib-ngx-component": "ng test @twitter-lib/ngx-component",
+    "test:coverage:ngx-twitter": "ng test ngx-twitter --coverage",
     "clear:windows": "Remove-Item -path \"node_modules/\" -Recurse -force && Remove-Item -path \"dist/\" -Recurse -force && npm run clear",
     "clear:linux": "rm -rf node_modules/ && rm -rf dist/ && npm run clear",
     "clear": "npm cache clear --force",
@@ -34,7 +35,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.9",
     "@angular/common": "^14.2.9",
